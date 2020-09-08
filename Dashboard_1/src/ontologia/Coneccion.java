@@ -33,7 +33,7 @@ public class Coneccion {
 
     public Coneccion() {
         this.modelo = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
-        InputStream in = FileManager.get().open("C:\\entregable3.owl");
+        InputStream in = FileManager.get().open("/entregable3.owl");
         if (in==null)
         {
          throw new IllegalArgumentException("Archivo no encontrado");
