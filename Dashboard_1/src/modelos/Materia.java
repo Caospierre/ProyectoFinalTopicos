@@ -16,11 +16,12 @@ public class Materia {
     
     public String carreraAlaQuePerteneceLaMateria(){
         return "PREFIX hc: <http://www.semanticweb.org/user/ontologies/2020/7/untitled-ontology-18#> "+
-        "SELECT?Nrc ?Carrera "+
+         "SELECT?Nrc ?Carrera?Materia "+
         "WHERE "+
         "{ "+
         " ?n hc:PerteneceAUna ?c."+
         " ?n hc:nrc ?Nrc."+
+        " ?n hc:descripcion ?Materia."+
         " ?c hc:nombre ?Carrera"+
         "}";
     }

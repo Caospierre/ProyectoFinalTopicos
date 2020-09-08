@@ -31,9 +31,10 @@ public class Utils {
         
     }
     public static void printTable(DefaultTableModel model ,  Vector data,int plus){
-       List<String> key = (List<String>) data.get(0);
-        List<String> values = (List<String>) data.get(1);
         
+       List<String> key = (List<String>) data.get(0);
+       List<String> values = (List<String>) data.get(1);
+       if(!key.isEmpty()){
         System.out.println("Cantidad de columnas :"+values.size()/key.size());
          for (int i = 0; i < key.size(); i++) {
               model.addColumn(key.get(i).toUpperCase());
@@ -44,10 +45,17 @@ public class Utils {
                 model.addRow(new Object[]{values.get(index),values.get(index+1),values.get(index+2),values.get(index+3) });     
              }
              else{
-                model.addRow(new Object[]{values.get(index),values.get(index+1) });  
+                if(plus==3){
+                   model.addRow(new Object[]{values.get(index),values.get(index+1),values.get(index+2) });     
+                }else{
+                   model.addRow(new Object[]{values.get(index),values.get(index+1) });       
+                 }
+                 
              }
             
              index+=plus;
-        }
+        }   
+       } 
+        
     }
 }
